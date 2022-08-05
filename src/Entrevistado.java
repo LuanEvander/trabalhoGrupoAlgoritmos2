@@ -6,6 +6,15 @@ public class Entrevistado {
     private String tecnologia;
     private String prioridade;
 
+    public Entrevistado(char sexo, String idade, String escolaridade, String moradia, String tecnologia, String prioridade) {
+        this.sexo = sexo;
+        this.idade = idade;
+        this.escolaridade = escolaridade;
+        this.moradia = moradia;
+        this.tecnologia = tecnologia;
+        this.prioridade = prioridade;
+    }
+
     public void setSexo(char sexo) {
         this.sexo = sexo;
     }
