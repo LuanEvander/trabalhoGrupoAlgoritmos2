@@ -18,7 +18,7 @@ public class Entrevistado {
     public void setSexo(char sexo) {
         this.sexo = sexo;
     }
-    
+
     public void setIdade(String idade) {
         this.idade = idade;
     }
@@ -38,11 +38,11 @@ public class Entrevistado {
     public void setPrioridade(String prioridade) {
         this.prioridade = prioridade;
     }
-    
+
     public char getSexo() {
         return sexo;
     }
-    
+
     public String getIdade() {
         return idade;
     }
@@ -62,5 +62,4 @@ public class Entrevistado {
     public String getPrioridade() {
         return prioridade;
     }
-
 }
