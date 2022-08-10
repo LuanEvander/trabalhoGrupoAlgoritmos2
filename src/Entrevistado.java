@@ -1,13 +1,13 @@
 public class Entrevistado {
-    private char sexo;
+    private char genero;
     private String idade;
     private String escolaridade;
     private String moradia;
     private String tecnologia;
     private String prioridade;
 
-    public Entrevistado(char sexo, String idade, String escolaridade, String moradia, String tecnologia, String prioridade) {
-        this.sexo = sexo;
+    public Entrevistado(char genero, String idade, String escolaridade, String moradia, String tecnologia, String prioridade) {
+        this.genero = genero;
         this.idade = idade;
         this.escolaridade = escolaridade;
         this.moradia = moradia;
@@ -15,8 +15,8 @@ public class Entrevistado {
         this.prioridade = prioridade;
     }
 
-    public void setSexo(char sexo) {
-        this.sexo = sexo;
+    public void setGenero(char genero) {
+        this.genero = genero;
     }
 
     public void setIdade(String idade) {
@@ -39,8 +39,8 @@ public class Entrevistado {
         this.prioridade = prioridade;
     }
 
-    public char getSexo() {
-        return sexo;
+    public char getGenero() {
+        return genero;
     }
 
     public String getIdade() {
