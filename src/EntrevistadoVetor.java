@@ -1,6 +1,6 @@
 public class EntrevistadoVetor {
     public Entrevistado[] entrevistadoRelatorio = new Entrevistado[300];
-    private int next = 0;
+    private int qtdEntrevistados = 0, next = 0;
 
     public void setEntrevistadoVetor(Entrevistado[] entrevistadoRelatorio) {
         this.entrevistadoRelatorio = entrevistadoRelatorio;
@@ -13,7 +13,6 @@ public class EntrevistadoVetor {
 
     public String stats1() {
         String str = "Total de entrevistados = ";
-        int qtdEntrevistados = 0;
         
         for (int i = 0; i < entrevistadoRelatorio.length; i++) {
             if (entrevistadoRelatorio[i] != null) {
@@ -26,11 +25,10 @@ public class EntrevistadoVetor {
     public String stats2() {
         float sexoMasc = 0, sexoFem = 0, sexoOutro = 0;
         float porcentoMasc = 0, porcentoFem = 0, porcentoOutro = 0;
-        int qtdEntrevistados = 0;
         
         for (int i = 0; i < entrevistadoRelatorio.length; i++) {
             if (entrevistadoRelatorio[i] != null) {
-                switch(entrevistadoRelatorio[i].getSexo()){
+                switch(entrevistadoRelatorio[i].getGenero()){
                     case 'm':
                         sexoMasc++;
                     break;
@@ -43,12 +41,11 @@ public class EntrevistadoVetor {
                         sexoOutro++;
                     break;
                 }
-                qtdEntrevistados++;
             }
         }
-        porcentoMasc = (sexoMasc * 100) / qtdEntrevistados;
-        porcentoFem = (sexoFem * 100) / qtdEntrevistados;
-        porcentoOutro = (sexoOutro * 100) / qtdEntrevistados;
+        porcentoMasc = (sexoMasc * 100) / entrevistadoRelatorio.length;
+        porcentoFem = (sexoFem * 100) / entrevistadoRelatorio.length;
+        porcentoOutro = (sexoOutro * 100) / entrevistadoRelatorio.length;
 
         String str = "\nPercentual de entrevistados por sexo:\n";
         String str1 = "Percentual de entrevistados identificados como masculino: " + porcentoMasc + "%\n";
@@ -57,79 +54,78 @@ public class EntrevistadoVetor {
 
         return str + str1 + str2 + str3;
     }
-
+    
     public String stats3() {
-        int ate15 = 0, entre16e29 = 0, entre30e59 = 0, acima60 = 0;
-        for (int i = 0; i < entrevistadoRelatorio.length; i++) {
-            if (entrevistadoRelatorio[i] != null) {
-                switch(entrevistadoRelatorio[i].getIdade()){
-                    case "Até 15 anos":
-                        ate15++;
-                    break;
-    
-                    case "De 16 a 29 anos":
-                        entre16e29++;
-                    break;
-    
-                    case "De 30 a 59 anos":
-                        entre30e59++;
+    int ate15 = 0, entre16e29 = 0, entre30e59 = 0, acima60 = 0;
+    for (int i = 0; i < entrevistadoRelatorio.length; i++) {
+        if (entrevistadoRelatorio[i] != null) {
+            switch (entrevistadoRelatorio[i].getIdade()) {
+                case "Até 15 anos":
+                    ate15++;
                     break;
 
-                    case "Acima de 60 anos":
-                        acima60++;
+                case "De 16 a 29 anos":
+                    entre16e29++;
                     break;
-                }
+
+                case "De 30 a 59 anos":
+                    entre30e59++;
+                    break;
+
+                case "Acima de 60 anos":
+                    acima60++;
+                    break;
             }
         }
-        String str = "\nNúmero de entrevistados por faixa etária:\n";
-        String str1 = "Até 15 anos: " + ate15 + "\n";
-        String str2 = "Entre 16 e 29 anos: " + entre16e29 + "\n";
-        String str3 = "Entre 30 e 59 anos: " + entre30e59 + "\n";
-        String str4 = "Acima de 60 anos: " + acima60;
+    }
+    String str = "\nNúmero de entrevistados por faixa etária:\n";
+    String str1 = "Até 15 anos: " + ate15 + "\n";
+    String str2 = "Entre 16 e 29 anos: " + entre16e29 + "\n";
+    String str3 = "Entre 30 e 59 anos: " + entre30e59 + "\n";
+    String str4 = "Acima de 60 anos: " + acima60;
 
-        return str + str1 + str2 + str3 + str4;
+    return str + str1 + str2 + str3 + str4;
     }
 
     public String stats4() {
         float fundInc = 0, fundCom = 0, medInc = 0, medCom = 0, supInc = 0, supCom = 0;
-        float porcentoFundInc = 0, porcentoFundCom = 0, porcentoMedInc = 0, porcentoMedCom = 0, porcentoSupInc = 0, porcentoSupCom = 0;
-        int qtdEntrevistados = 0;
+        float porcentoFundInc = 0, porcentoFundCom = 0, porcentoMedInc = 0, porcentoMedCom = 0,
+                porcentoSupInc = 0, porcentoSupCom = 0;
         for (int i = 0; i < entrevistadoRelatorio.length; i++) {
             if (entrevistadoRelatorio[i] != null) {
-                switch(entrevistadoRelatorio[i].getEscolaridade()){
+                switch (entrevistadoRelatorio[i].getEscolaridade()) {
                     case "Ensino fundamental incompleto":
                         fundInc++;
-                    break;
-    
+                        break;
+
                     case "Ensino fundamental completo":
                         fundCom++;
-                    break;
-    
+                        break;
+
                     case "Ensino médio incompleto":
                         medInc++;
-                    break;
+                        break;
 
                     case "Ensino médio completo":
                         medCom++;
-                    break;
-                    
+                        break;
+
                     case "Ensino superior incompleto":
                         supInc++;
-                    break;
-                    
+                        break;
+
                     case "Ensino superior completo":
                         supCom++;
-                    break;
+                        break;
                 }
-                qtdEntrevistados++;
             }
         }
-        porcentoFundInc = (fundInc * 100) / qtdEntrevistados;
-        porcentoFundCom = (fundCom * 100) / qtdEntrevistados;
-        porcentoMedInc = (medInc * 100) / qtdEntrevistados;
-        porcentoMedCom = (medCom * 100) / qtdEntrevistados;
-        porcentoSupInc = (supInc * 100) / qtdEntrevistados;
-        porcentoSupCom = (supCom * 100) / qtdEntrevistados;
+        porcentoFundInc = (fundInc * 100) / entrevistadoRelatorio.length;
+        porcentoFundCom = (fundCom * 100) / entrevistadoRelatorio.length;
+        porcentoMedInc = (medInc * 100) / entrevistadoRelatorio.length;
+        porcentoMedCom = (medCom * 100) / entrevistadoRelatorio.length;
+        porcentoSupInc = (supInc * 100) / entrevistadoRelatorio.length;
+        porcentoSupCom = (supCom * 100) / entrevistadoRelatorio.length;
 
         String str = "\nPercentual de entrevistados por escolaridade:\n";
         String str1 = "Ensino fundamental incompleto: " + porcentoFundInc + "%\n";
@@ -146,7 +142,7 @@ public class EntrevistadoVetor {
         int supCom = 0;
         for (int i = 0; i < entrevistadoRelatorio.length; i++) {
             if (entrevistadoRelatorio[i] != null) {
-                if(entrevistadoRelatorio[i].getEscolaridade().equals("Ensino superior completo")){
+                if (entrevistadoRelatorio[i].getEscolaridade().equals("Ensino superior completo")) {
                     supCom++;
                 }
             }
@@ -158,37 +154,34 @@ public class EntrevistadoVetor {
 
     public String stats6() {
         float ate15 = 0, entre16e29 = 0, entre30e59 = 0, acima60 = 0;
-        float porcentoAte15 = 0, porcentoEntre16e29 = 0, porcentoEntre30e59 = 0, porcentoAcima60 = 0;
-        int qtdSmartphone = 0;
         String maior;
         for (int i = 0; i < entrevistadoRelatorio.length; i++) {
             if (entrevistadoRelatorio[i] != null) {
-                if(entrevistadoRelatorio[i].getTecnologia().equals("Smartphone")){
-                    switch(entrevistadoRelatorio[i].getIdade()){
+                if (entrevistadoRelatorio[i].getTecnologia().equals("Smartphone")) {
+                    switch (entrevistadoRelatorio[i].getIdade()) {
                         case "Até 15 anos":
                             ate15++;
-                        break;
-        
+                            break;
+
                         case "De 16 a 29 anos":
                             entre16e29++;
-                        break;
-        
+                            break;
+
                         case "De 30 a 59 anos":
                             entre30e59++;
-                        break;
-    
+                            break;
+
                         case "Acima de 60 anos":
                             acima60++;
-                        break;
+                            break;
                     }
-                    qtdSmartphone++;
                 }
             }
         }
 
-        if (ate15 > entre16e29){
-            if (ate15 > entre30e59){
-                if (ate15 > acima60){
+        if (ate15 > entre16e29) {
+            if (ate15 > entre30e59) {
+                if (ate15 > acima60) {
                     maior = "Até 15 anos";
                 } else {
                     maior = "Acima de 60 anos";
@@ -198,7 +191,7 @@ public class EntrevistadoVetor {
             } else {
                 maior = "Acima de 60 anos";
             }
-        } else if (entre16e29 > entre30e59){
+        } else if (entre16e29 > entre30e59) {
             maior = "De 16 a 29 anos";
         } else {
             maior = "De 30 a 59 anos";
@@ -214,46 +207,46 @@ public class EntrevistadoVetor {
         String menor;
         for (int i = 0; i < entrevistadoRelatorio.length; i++) {
             if (entrevistadoRelatorio[i] != null) {
-                if(entrevistadoRelatorio[i].getIdade().equals("Até 15 anos")){
-                    switch(entrevistadoRelatorio[i].getTecnologia()){
+                if (entrevistadoRelatorio[i].getIdade().equals("Até 15 anos")) {
+                    switch (entrevistadoRelatorio[i].getTecnologia()) {
                         case "Computador Pessoal":
                             pc++;
-                        break;
-        
+                            break;
+
                         case "Notebook ou Netbook":
                             note++;
-                        break;
-        
+                            break;
+
                         case "Smartphone":
                             smartphone++;
-                        break;
-    
+                            break;
+
                         case "Tablet":
                             tablet++;
-                        break;
+                            break;
 
                         case "Nenhuma":
                             nenhuma++;
-                        break;
+                            break;
                     }
                 }
             }
         }
 
-        if (pc < note){
-            if (pc < smartphone){
-                if (pc < tablet){
-                    if (pc < nenhuma){
+        if (pc < note) {
+            if (pc < smartphone) {
+                if (pc < tablet) {
+                    if (pc < nenhuma) {
                         menor = "Computador Pessoal";
                     } else {
                         menor = "Nenhuma";
                     }
-                } else if (tablet < nenhuma){
+                } else if (tablet < nenhuma) {
                     menor = "Tablet";
                 } else {
                     menor = "Nenhuma";
                 }
-            } else if (smartphone < tablet){
+            } else if (smartphone < tablet) {
                 menor = "Smartphone";
             } else {
                 menor = "Tablet";
@@ -270,34 +263,59 @@ public class EntrevistadoVetor {
     }
 
     public String stats8() {
-        int ate15 = 0, entre16e29 = 0, entre30e59 = 0, acima60 = 0;
+        int alimentacao = 0, cultura = 0, educacao = 0, emprego = 0, lazer = 0, saude = 0,
+                seguranca = 0, transporte = 0;
         for (int i = 0; i < entrevistadoRelatorio.length; i++) {
             if (entrevistadoRelatorio[i] != null) {
-                switch(entrevistadoRelatorio[i].getPrioridade()){
-                    case "Até 15 anos":
-                        ate15++;
-                    break;
-    
-                    case "De 16 a 29 anos":
-                        entre16e29++;
-                    break;
-    
-                    case "De 30 a 59 anos":
-                        entre30e59++;
-                    break;
+                switch (entrevistadoRelatorio[i].getPrioridade()) {
+                    case "Alimentação":
+                        alimentacao++;
+                        break;
 
-                    case "Acima de 60 anos":
-                        acima60++;
-                    break;
+                    case "Cultura":
+                        cultura++;
+                        break;
+
+                    case "Educação":
+                        educacao++;
+                        break;
+
+                    case "Emprego":
+                        emprego++;
+                        break;
+
+                    case "Lazer":
+                        lazer++;
+                        break;
+
+                    case "Saúde":
+                        saude++;
+                        break;
+
+                    case "Segurança":
+                        seguranca++;
+                        break;
+
+                    case "Transporte":
+                        transporte++;
+                        break;
                 }
             }
         }
-        String str = "\nNúmero de entrevistados por faixa etária:\n";
-        String str1 = "Até 15 anos: " + ate15 + "\n";
-        String str2 = "Entre 16 e 29 anos: " + entre16e29 + "\n";
-        String str3 = "Entre 30 e 59 anos: " + entre30e59 + "\n";
-        String str4 = "Acima de 60 anos: " + acima60;
+        String str = "\nNúmero de entrevistados por área prioritária:\n";
+        String str1 = "Alimentação: " + alimentacao + "\n";
+        String str2 = "Cultura: " + cultura + "\n";
+        String str3 = "Educação: " + educacao + "\n";
+        String str4 = "Emprego: " + emprego + "\n";
+        String str5 = "Lazer: " + lazer + "\n";
+        String str6 = "Saúde: " + saude + "\n";
+        String str7 = "Segurança: " + seguranca + "\n";
+        String str8 = "Transporte: " + transporte + "\n";
 
-        return str + str1 + str2 + str3 + str4;
+        return str + str1 + str2 + str3 + str4 + str5 + str6 + str7 + str8;
+    }
+
+    public String report() {
+        return stats1() + "\n" + stats2() + "\n" + stats3() + "\n" + stats4() + "\n" + stats5() + "\n" + stats6() + "\n" + stats7() + "\n" + stats8();
     }
 }
