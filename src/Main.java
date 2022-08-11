@@ -5,7 +5,6 @@ public class Main {
     public static void main(String[] args) throws Exception {
         EntrevistadoVetor callMethod = csvReader();
         Arquivo.gravar(callMethod.report(), "Relatório.txt");
-        System.out.println("Relatório gerado com sucesso!");
     }
 
 
@@ -35,6 +34,8 @@ public class Main {
             e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
+        } finally {
+            System.out.println("Relatório gerado com sucesso!");
         }
         // retorna o vetor de objetos Entrevistado
         return entrevistadoVetor;

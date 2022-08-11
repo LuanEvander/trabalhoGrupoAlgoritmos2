@@ -14,109 +14,109 @@ public class Entrevistado {
         this.tecnologia = tecnologia;
         this.prioridade = prioridade;
     }
-
     
     /** 
-     * @param genero: Gênero do entrevistado
+     * @param genero
+     * Gênero do entrevistado
      * @author Edelin Chaves
      */
     public void setGenero(char genero) {
         this.genero = genero;
     }
-
     
     /** 
-     * @param idade: Idade do entrevistado
+     * @param idade
+     * Idade do entrevistado
      * @author Edelin Chaves
      */
     public void setIdade(String idade) {
         this.idade = idade;
     }
-
     
     /** 
-     * @param escolaridade: Escolaridade do entrevistado
+     * @param escolaridade
+     * Escolaridade do entrevistado
      * @author Edelin Chaves
      */
     public void setEscolaridade(String escolaridade) {
         this.escolaridade = escolaridade;
     }
-
-    
+   
     /** 
-     * @param moradia: Moradia do entrevistado
+     * @param moradia
+     * Moradia do entrevistado
      * @author Edelin Chaves
      */
     public void setMoradia(String moradia) {
         this.moradia = moradia;
     }
-
-    
+  
     /** 
-     * @param tecnologia: Tecnologia do entrevistado
+     * @param tecnologia
+     * Tecnologia do entrevistado
      * @author Edelin Chaves
      */
     public void setTecnologia(String tecnologia) {
         this.tecnologia = tecnologia;
     }
-
     
     /** 
-     * @param prioridade: Prioridade do entrevistado
+     * @param prioridade
+     * Prioridade do entrevistado
      * @author Edelin Chaves
      */
     public void setPrioridade(String prioridade) {
         this.prioridade = prioridade;
     }
-
     
     /** 
-     * @return char: Gênero do entrevistado
+     * @return char
+     * Gênero do entrevistado
      * @author Edelin Chaves
      */
     public char getGenero() {
         return genero;
     }
-
     
     /** 
-     * @return String: Idade do entrevistado
+     * @return String
+     * Idade do entrevistado
      * @author Edelin Chaves
      */
     public String getIdade() {
         return idade;
     }
-
     
     /** 
-     * @return String: Escolaridade do entrevistado
+     * @return String 
+     * Escolaridade do entrevistado
      * @author Edelin Chaves
      */
     public String getEscolaridade() {
         return escolaridade;
     }
-
     
     /** 
-     * @return String: Moradia do entrevistado
+     * @return String
+     * Moradia do entrevistado
      * @author Edelin Chaves
      */
     public String getMoradia() {
         return moradia;
     }
-
     
     /** 
-     * @return String: Tecnologia do entrevistado
+     * @return String
+     * Tecnologia do entrevistado
      * @author Edelin Chaves
      */
     public String getTecnologia() {
         return tecnologia;
     }
-
     
     /** 
-     * @return String: Prioridade do entrevistado
+     * @return String
+     * Prioridade do entrevistado
      * @author Edelin Chaves
      */
     public String getPrioridade() {
