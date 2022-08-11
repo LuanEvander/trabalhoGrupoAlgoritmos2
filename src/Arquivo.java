@@ -2,12 +2,11 @@ import java.io.*;
 
 public class Arquivo {
 
-    
-    /** 
+    /**
      * @param conteudo: String que será escrita no arquivo
      * @param nomeArquivo: Nome do arquivo que será criado
      * @return: Retorna true se o arquivo foi criado com sucesso
-     * @throws Exception
+     * @throws Exception: Caso ocorra algum erro ao criar o arquivo
      * @author Edelin Chaves
      */
     public static void gravar(String conteudo, String nomeArquivo) throws Exception {
@@ -23,12 +22,11 @@ public class Arquivo {
         outFile.close();
     }
 
-    
-    /** 
+    /**
      * @param obj: Objeto que será escrito no arquivo
      * @param nomeArquivo: Nome do arquivo que será criado
      * @return: Retorna true se o arquivo foi criado com sucesso
-     * @throws Exception
+     * @throws Exception: Caso ocorra algum erro ao criar o arquivo
      * @author Edelin Chaves
      */
     public static void gravar(Object obj, String nomeArquivo) throws Exception {
@@ -41,8 +39,7 @@ public class Arquivo {
         output.close();
     }
 
-    
-    /** 
+    /**
      * @param nomeArquivo: Nome do arquivo que será lido
      * @return Object: Retorna o objeto lido do arquivo
      * @throws Exception: Caso o arquivo não exista ou ocorra algum erro durante a leitura do arquivo
@@ -60,9 +57,7 @@ public class Arquivo {
         return obj;
     }
 
-
-    
-    /** 
+    /**
      * @param nomeArquivo: Nome do arquivo que será lido
      * @return String[]: Retorna o conteudo do arquivo
      * @throws Exception: Lança uma exceção caso o arquivo não seja encontrado
