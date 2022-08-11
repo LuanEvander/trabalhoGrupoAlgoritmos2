@@ -19,7 +19,7 @@ public class EntrevistadoVetor {
      */
 
     public String stats1() {
-        String str = "Total de entrevistados = ";
+        String str = "Dado Nº 1 - Total de entrevistados = ";
         //Aqui é feita a contagem de total de entrevistados de uma em uma linha do arquivo csv
         for (int i = 0; i < entrevistadoRelatorio.length; i++) {
             if (entrevistadoRelatorio[i] != null) {
@@ -53,7 +53,7 @@ public class EntrevistadoVetor {
         porcentoFem = (sexoFem * 100) / entrevistadoRelatorio.length;
         porcentoOutro = (sexoOutro * 100) / entrevistadoRelatorio.length;
 
-        String str = "\nPercentual de entrevistados por sexo:\nPercentual de entrevistados identificados como masculino: " + porcentoMasc + "%\nPercentual de entrevistados identificados como feminino: " + porcentoFem + "%\nPercentual de entrevistados identificados como outro: " + porcentoOutro + "%";
+        String str = "\nDados Nº 2 - Percentual de entrevistados por sexo:\nPercentual de entrevistados identificados como masculino: " + porcentoMasc + "%\nPercentual de entrevistados identificados como feminino: " + porcentoFem + "%\nPercentual de entrevistados identificados como outro: " + porcentoOutro + "%";
 
 
         return str;
@@ -77,7 +77,7 @@ public class EntrevistadoVetor {
             }
         }
 
-        String str = "\nNúmero de entrevistados por faixa etária:\nAté 15 anos: " + ate15 + "\nDe 16 e 29 anos: " + entre16e29 + "\nDe 30 e 59 anos: " + entre30e59 + "\nAcima de 60 anos: " + acima60;
+        String str = "\nDados Nº 3 - Número de entrevistados por faixa etária:\nAté 15 anos: " + ate15 + "\nDe 16 e 29 anos: " + entre16e29 + "\nDe 30 e 59 anos: " + entre30e59 + "\nAcima de 60 anos: " + acima60;
 
         return str;
     }
@@ -109,7 +109,7 @@ public class EntrevistadoVetor {
         porcentoSupInc = (supInc * 100) / entrevistadoRelatorio.length;
         porcentoSupCom = (supCom * 100) / entrevistadoRelatorio.length;
 
-        String str = "\nPercentual de entrevistados por escolaridade:\nEnsino fundamental incompleto: " + porcentoFundInc + "%\nEnsino fundamental completo: " + porcentoFundCom + "%\nEnsino médio incompleto: " + porcentoMedInc + "%\nEnsino médio completo: " + porcentoMedCom + "%\nEnsino superior incompleto: " + porcentoSupInc + "%\nEnsino superior completo: " + porcentoSupCom + "%";
+        String str = "\nDados Nº 4 - Percentual de entrevistados por escolaridade:\nEnsino fundamental incompleto: " + porcentoFundInc + "%\nEnsino fundamental completo: " + porcentoFundCom + "%\nEnsino médio incompleto: " + porcentoMedInc + "%\nEnsino médio completo: " + porcentoMedCom + "%\nEnsino superior incompleto: " + porcentoSupInc + "%\nEnsino superior completo: " + porcentoSupCom + "%";
 
 
         return str;
@@ -130,7 +130,7 @@ public class EntrevistadoVetor {
                 }
             }
         }
-        String str = "\nEntrevistados que possuem o ensino superior completo: " + supCom;
+        String str = "\nDado Nº 5 - Entrevistados que possuem o ensino superior completo: " + supCom;
 
         return str;
     }
@@ -154,7 +154,7 @@ public class EntrevistadoVetor {
                 }
             }
         }
-
+        // aqui é feita a comparação de qual faixa etária possui mais entrevistados com smartphone
         if (ate15 > entre16e29) {
             if (ate15 > entre30e59) {
                 if (ate15 > acima60) {
@@ -173,7 +173,7 @@ public class EntrevistadoVetor {
             maior = "De 30 a 59 anos";
         }
 
-        String str = "\n" + maior + " é a faixa etária que mais utiliza Smartphone.";
+        String str = "\nDado Nº 6 - " + maior + " é a faixa etária que mais utiliza Smartphone.";
 
         return str;
     }
@@ -198,7 +198,7 @@ public class EntrevistadoVetor {
                 }
             }
         }
-
+        // aqui é feita a comparação de qual tecnologia é menos utilizada pelos entrevistados de até 15 anos
         if (pc < note) {
             if (pc < smartphone) {
                 if (pc < tablet) {
@@ -223,7 +223,7 @@ public class EntrevistadoVetor {
             menor = "Tablet";
         }
 
-        String str = "\n" + menor + " é tecnologia menos utilizada pelos entrevistados com idade até 15 anos.";
+        String str = "\nDado Nº 7 - " + menor + " é tecnologia menos utilizada pelos entrevistados com idade até 15 anos.";
 
         return str;
     }
@@ -250,7 +250,7 @@ public class EntrevistadoVetor {
             }
         }
         
-        String str = "\nNúmero de entrevistados por área prioritária:\nAlimentação: " + alimentacao + "\nCultura: " + cultura + "\nEducação: " + educacao + "\nEmprego: " + emprego + "\nLazer: " + lazer + "\nSaúde: " + saude + "\nSegurança: " + seguranca + "\nTransporte: " + transporte + "\n";
+        String str = "\nDados Nº 8 - Número de entrevistados por área prioritária:\nAlimentação: " + alimentacao + "\nCultura: " + cultura + "\nEducação: " + educacao + "\nEmprego: " + emprego + "\nLazer: " + lazer + "\nSaúde: " + saude + "\nSegurança: " + seguranca + "\nTransporte: " + transporte + "\n";
 
         return str;
     }
