@@ -2,6 +2,13 @@ import java.io.*;
 
 public class Arquivo {
 
+    /**
+     * @param conteudo: String que será escrita no arquivo
+     * @param nomeArquivo: Nome do arquivo que será criado
+     * @return: Retorna true se o arquivo foi criado com sucesso
+     * @throws Exception: Caso ocorra algum erro ao criar o arquivo
+     * @author Edelin Chaves
+     */
     public static void gravar(String conteudo, String nomeArquivo) throws Exception {
         // abre o arquivo para escrita
         FileOutputStream outFile = new FileOutputStream(new File(nomeArquivo));
@@ -15,6 +22,13 @@ public class Arquivo {
         outFile.close();
     }
 
+    /**
+     * @param obj: Objeto que será escrito no arquivo
+     * @param nomeArquivo: Nome do arquivo que será criado
+     * @return: Retorna true se o arquivo foi criado com sucesso
+     * @throws Exception: Caso ocorra algum erro ao criar o arquivo
+     * @author Edelin Chaves
+     */
     public static void gravar(Object obj, String nomeArquivo) throws Exception {
         ObjectOutputStream output;
         // abre o arquivo para escrita
@@ -25,6 +39,12 @@ public class Arquivo {
         output.close();
     }
 
+    /**
+     * @param nomeArquivo: Nome do arquivo que será lido
+     * @return Object: Retorna o objeto lido do arquivo
+     * @throws Exception: Caso o arquivo não exista ou ocorra algum erro durante a leitura do arquivo
+     * @author Edelin Chaves
+     */
     public static Object ler(String nomeArquivo) throws Exception {
         Object obj;
         ObjectInputStream input;
@@ -37,7 +57,12 @@ public class Arquivo {
         return obj;
     }
 
-
+    /**
+     * @param nomeArquivo: Nome do arquivo que será lido
+     * @return String[]: Retorna o conteudo do arquivo
+     * @throws Exception: Lança uma exceção caso o arquivo não seja encontrado
+     * @author Edelin Chaves
+     */
     public static String[] getLinhas(String nomeArquivo) throws Exception {
         // declaração das variáveis
         String[] linhas;
