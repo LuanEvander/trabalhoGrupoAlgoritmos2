@@ -2,6 +2,12 @@ import java.io.*;
 
 public class Arquivo {
 
+    
+    /** 
+     * @param conteudo
+     * @param nomeArquivo
+     * @throws Exception
+     */
     public static void gravar(String conteudo, String nomeArquivo) throws Exception {
         // abre o arquivo para escrita
         FileOutputStream outFile = new FileOutputStream(new File(nomeArquivo));
@@ -15,6 +21,12 @@ public class Arquivo {
         outFile.close();
     }
 
+    
+    /** 
+     * @param obj
+     * @param nomeArquivo
+     * @throws Exception
+     */
     public static void gravar(Object obj, String nomeArquivo) throws Exception {
         ObjectOutputStream output;
         // abre o arquivo para escrita
@@ -25,6 +37,12 @@ public class Arquivo {
         output.close();
     }
 
+    
+    /** 
+     * @param nomeArquivo
+     * @return Object
+     * @throws Exception
+     */
     public static Object ler(String nomeArquivo) throws Exception {
         Object obj;
         ObjectInputStream input;
@@ -38,6 +56,12 @@ public class Arquivo {
     }
 
 
+    
+    /** 
+     * @param nomeArquivo
+     * @return String[]
+     * @throws Exception
+     */
     public static String[] getLinhas(String nomeArquivo) throws Exception {
         // declaração das variáveis
         String[] linhas;

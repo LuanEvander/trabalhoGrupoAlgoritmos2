@@ -2,6 +2,11 @@ import java.io.*;
 
 //A classe Main serve para ler o arquivo de entrada e cria um arquivo txt com o resultado.
 public class Main {
+    
+    /** 
+     * @param args
+     * @throws Exception
+     */
     public static void main(String[] args) throws Exception {
         EntrevistadoVetor callMethod = csvReader();
         Arquivo.gravar(callMethod.report(), "Relatório.txt");
